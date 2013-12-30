@@ -213,3 +213,15 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+#MC stuff we don't need
+cpw/
+net/
+ibxm/
+paulscode/
+forge*.*
+fml*.*
+deobfuscation_data*.lzma
+mcpmod.info
+Start.java
+assets/forge/
