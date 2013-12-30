@@ -8,9 +8,9 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class mazeMaker extends Item{
+public class MazeMaker extends Item{
 
-	public mazeMaker(int id) {
+	public MazeMaker(int id) {
 		super(id);
 		this.setUnlocalizedName("maze_maker");
 		this.setCreativeTab(CreativeTabs.tabTools); 
@@ -18,7 +18,7 @@ public class mazeMaker extends Item{
 
 
 	public void registerIcons(IconRegister reg){
-		if (itemID == mazeMod.mazeGun.itemID) {
+		if (itemID == MazeMod.mazeGun.itemID) {
 			this.itemIcon = reg.registerIcon("maze_maker");
 		}
 	}

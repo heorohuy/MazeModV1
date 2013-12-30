@@ -2,7 +2,7 @@ package heoro.mazemod.entities;
 
 import heoro.mazemod.blocks.BlockMazeWallEgg;
 import net.minecraft.block.Block;
-import heoro.mazemod.mazeMod;
+import heoro.mazemod.MazeMod;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -165,18 +165,18 @@ public class EntityMazeSilverfish extends EntityMob
                             {
                                 int k1 = this.worldObj.getBlockId(i + i1, j + l, k + j1);
 
-                                if (k1 == mazeMod.blockMazeWallEgg.blockID)
+                                if (k1 == MazeMod.blockMazeWallEgg.blockID)
                                 {
                                     if (!this.worldObj.getGameRules().getGameRuleBooleanValue("mobGriefing"))
                                     {
-                                        this.worldObj.setBlock(i + i1, j + l, k + j1, mazeMod.blockMazeWallEgg.blockID, 0, 3);
+                                        this.worldObj.setBlock(i + i1, j + l, k + j1, MazeMod.blockMazeWallEgg.blockID, 0, 3);
                                     }
                                     else
                                     {
                                         this.worldObj.destroyBlock(i + i1, j + l, k + j1, false);
                                     }
 
-                                    mazeMod.blockMazeWallEgg.onBlockDestroyedByPlayer(this.worldObj, i + i1, j + l, k + j1, 0);
+                                    MazeMod.blockMazeWallEgg.onBlockDestroyedByPlayer(this.worldObj, i + i1, j + l, k + j1, 0);
 
                                     if (this.rand.nextBoolean())
                                     {
@@ -198,9 +198,9 @@ public class EntityMazeSilverfish extends EntityMob
                 int i2 = this.rand.nextInt(6);
                 l = this.worldObj.getBlockId(i + Facing.offsetsXForSide[i2], j + Facing.offsetsYForSide[i2], k + Facing.offsetsZForSide[i2]);
 
-                if (l == mazeMod.blockMazeWall.blockID)
+                if (l == MazeMod.blockMazeWall.blockID)
                 {
-                    this.worldObj.setBlock(i + Facing.offsetsXForSide[i2], j + Facing.offsetsYForSide[i2], k + Facing.offsetsZForSide[i2], mazeMod.blockMazeWallEgg.blockID, 1, 3);
+                    this.worldObj.setBlock(i + Facing.offsetsXForSide[i2], j + Facing.offsetsYForSide[i2], k + Facing.offsetsZForSide[i2], MazeMod.blockMazeWallEgg.blockID, 1, 3);
                     this.spawnExplosionParticle();
                     this.setDead();
                 }
@@ -222,7 +222,7 @@ public class EntityMazeSilverfish extends EntityMob
      */
     public float getBlockPathWeight(int par1, int par2, int par3)
     {
-        return this.worldObj.getBlockId(par1, par2 - 1, par3) == mazeMod.blockMazeWall.blockID ? 10.0F : super.getBlockPathWeight(par1, par2, par3);
+        return this.worldObj.getBlockId(par1, par2 - 1, par3) == MazeMod.blockMazeWall.blockID ? 10.0F : super.getBlockPathWeight(par1, par2, par3);
     }
 
     /**

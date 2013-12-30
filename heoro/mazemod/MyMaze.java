@@ -11,6 +11,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityChest;
 import net.minecraft.world.World;
+import heoro.mazemod.blocks.*;
+import heoro.mazemod.*;
 
 public class MyMaze {
 	private int dimensionX, dimensionZ; // dimension of maze
@@ -398,11 +400,16 @@ public class MyMaze {
 						//Maps each cell in the grid to a 3x3 area.
 						for(int d = 0; d < SIZE; d++){
 							for(int e = 0; e < SIZE; e++){
-								if(e==SIZE/2 && d==SIZE/2 && c==1 && random.nextInt(4)==0){
-									world.setBlock(x+b*SIZE+d,y+c,z+a*SIZE+e,Block.mobSpawner.blockID);
-								}
-								else{
-									world.setBlock(x+b*SIZE+d,y+c,z+a*SIZE+e,Block.cobblestoneMossy.blockID);
+//								if(e==SIZE/2 && d==SIZE/2 && c==1 && random.nextInt(4)==0){
+//									world.setBlock(x+b*SIZE+d,y+c,z+a*SIZE+e,Block.mobSpawner.blockID);
+//								}
+//								else{
+//									world.setBlock(x+b*SIZE+d,y+c,z+a*SIZE+e,Block.cobblestoneMossy.blockID);
+//								}
+								if(random.nextInt(10)==0){
+									world.setBlock(x+b*SIZE+d,y+c,z+a*SIZE+e,MazeMod.blockMazeWallEgg.blockID);
+								}else{
+									world.setBlock(x+b*SIZE+d,y+c,z+a*SIZE+e,MazeMod.blockMazeWall.blockID);
 								}
 							}
 						}
@@ -413,7 +420,7 @@ public class MyMaze {
 					//1 Floor block
 					for(int d = 0; d < SIZE; d++)
 						for(int e = 0; e < SIZE; e++)
-							world.setBlock(x+b*SIZE+d,y,z+a*SIZE+e,Block.cobblestoneMossy.blockID);
+							world.setBlock(x+b*SIZE+d,y,z+a*SIZE+e,MazeMod.blockMazeWall.blockID);
 					//5 Air blocks
 					for(int c = 1; c < 6; c++){
 						for(int d = 0; d < SIZE; d++)
@@ -423,7 +430,7 @@ public class MyMaze {
 					//1 Roof block
 					for(int d = 0; d < SIZE; d++)
 						for(int e = 0; e < SIZE; e++)
-							world.setBlock(x+b*SIZE+d,y+6,z+a*SIZE+e,Block.cobblestoneMossy.blockID);
+							world.setBlock(x+b*SIZE+d,y+6,z+a*SIZE+e,MazeMod.blockMazeWall.blockID);
 				}
 			}
 		}
@@ -445,7 +452,7 @@ public class MyMaze {
 					if(a==1 && b==1){
 						world.setBlockToAir(a+x+ex, c, b+z+ez);
 					}else{
-						world.setBlock(a+x+ex, c, b+z+ez,Block.cobblestoneMossy.blockID);
+						world.setBlock(a+x+ex, c, b+z+ez,MazeMod.blockMazeWall.blockID);
 					}
 				}
 			}

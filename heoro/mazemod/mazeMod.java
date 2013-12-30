@@ -30,10 +30,10 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 @Mod(modid = "HeoroMaze", name = "Heoro's Maze Mod", version = "1.0")
 @NetworkMod(clientSideRequired = true,serverSideRequired = false)
 
-public class mazeMod {
+public class MazeMod {
 	
 	@Instance("mazeMod")
-	public static mazeMod instance;
+	public static MazeMod instance;
 	
 	//Items
 	public static Item mazeGun; //= new mazeMaker(2000).setUnlocalizedName("maze_maker");//.setTextureName("heoro:maze_maker");
@@ -55,7 +55,7 @@ public class mazeMod {
 	public void load(FMLInitializationEvent event){
 		
 		//items
-		mazeGun = new mazeMaker(5000);//.setTextureName("heoro:maze_maker");
+		mazeGun = new MazeMaker(5000);//.setTextureName("heoro:maze_maker");
 		LanguageRegistry.addName(mazeGun,"The Maze Maker");
 		
 		//blocks
